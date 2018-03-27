@@ -4,10 +4,6 @@ require("dotenv").config();
 // Add the code required to import the `keys.js` file and store it in a variable.
 var keys = require('./keys');
 
-// Access your keys information
-// var spotify = new Spotify(keys.spotify);
-
-
 // Make it so liri.js can take in one of the following commands
 // `my-tweets`
 // `spotify-this-song`
@@ -52,21 +48,62 @@ function getTweets() {
             console.log(tweets);
         }
     });
-    // request("twit"); // this is how we import the twit package
+}
 
-    // var config = require('./config') //this is we import the config file which is a js file which contains the keys ans tokens
-    
-    // var T = new Twit(config); //this is the object of twit which will help us to call functions inside it
-    
-    // var params = {
-    //     q: 'akshay',
-    //     count: 100
-    // } // this is the param variable which will have key and value,the key is the keyword which we are interested in searching and count is the count of it
-    // T.get('search/tweets', params,searchedData); // get is the function to search the tweet which three paramaters 'search/tweets',params and a callback function.
-    
-    // function searchedData(err, data, response) {
-    //     console.log(data);
-    // } // searchedData function is a callback function which returns the data when we make a search
+function getSong(title) {
+
+    // Import the spotify API
+    var Spotify = require('node-spotify-api');
+
+    // Access your keys information
+    var spotify = new Spotify(keys.spotify);
+
+    title = title.replace(' ', '+');
+
+
+
+    // Search tracks whose name, album or artist contains 'Love'
+    // spotify.searchTracks(title)
+    //     .then(function(data) {
+    //     console.log('Search by "Love"', data.body);
+    //     }, function(err) {
+    //     console.error(err);
+    //     });
+
+
+
+    spotify
+        .search({ type: 'track', query: title })
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+
+
+
+    // spotify
+    //     .request("https://api.spotify.com/v1/search?query=" + title + "&type=track&offset=0&limit=20")
+    //     .then(function(data) {
+    //         console.log(data); 
+    //     })
+    //     .catch(function(err) {
+    //         console.error('Error occurred: ' + err); 
+    //     });
+
+
+
+
+    // request("https://api.spotify.com/v1/search?query=" + title + "&type=track&offset=0&limit=20");
+       
+    // spotify.search({ type: 'track', query: title }, function(err, data) {
+    //     if (err) {
+    //         return console.log('Error occurred: ' + err);
+    //     }
+    //     console.log(JSON.parse(data)); 
+    // });
 }
 
 function getMovie(title) {
