@@ -6,7 +6,7 @@ var keys = require('./keys');
 
 // Access your keys information
 // var spotify = new Spotify(keys.spotify);
-// var client = new Twitter(keys.twitter);
+
 
 // Make it so liri.js can take in one of the following commands
 // `my-tweets`
@@ -37,6 +37,36 @@ else if (action === 'movie-this') {
 }
 else if (action === 'do-what-it-says') {
     doWhatItSays();
+}
+
+function getTweets() {
+
+    var Twitter = require('twitter');
+
+    // Access your keys information
+    var client = new Twitter(keys.twitter);
+
+    var params = {screen_name: 'StefLiri'};
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        if (!error) {
+            console.log(tweets);
+        }
+    });
+    // request("twit"); // this is how we import the twit package
+
+    // var config = require('./config') //this is we import the config file which is a js file which contains the keys ans tokens
+    
+    // var T = new Twit(config); //this is the object of twit which will help us to call functions inside it
+    
+    // var params = {
+    //     q: 'akshay',
+    //     count: 100
+    // } // this is the param variable which will have key and value,the key is the keyword which we are interested in searching and count is the count of it
+    // T.get('search/tweets', params,searchedData); // get is the function to search the tweet which three paramaters 'search/tweets',params and a callback function.
+    
+    // function searchedData(err, data, response) {
+    //     console.log(data);
+    // } // searchedData function is a callback function which returns the data when we make a search
 }
 
 function getMovie(title) {
