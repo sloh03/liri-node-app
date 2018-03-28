@@ -19,7 +19,12 @@ if (action === 'my-tweets') {
     getTweets();
 }
 else if (action === 'spotify-this-song') {
-    getSong(title);
+    if (title) {
+        getSong(title);
+    }
+    else {
+        getSong('The Sign Ace of Base')
+    }
 }
 else if (action === 'movie-this') {
     // If the user enters a movie, output data for that movie
@@ -34,6 +39,8 @@ else if (action === 'movie-this') {
 else if (action === 'do-what-it-says') {
     doWhatItSays();
 }
+
+
 
 function getTweets() {
 
@@ -50,6 +57,8 @@ function getTweets() {
     });
 }
 
+
+
 function getSong(title) {
 
     // Import the spotify API
@@ -60,51 +69,31 @@ function getSong(title) {
 
     title = title.replace(' ', '+');
 
-
-
-    // Search tracks whose name, album or artist contains 'Love'
-    // spotify.searchTracks(title)
-    //     .then(function(data) {
-    //     console.log('Search by "Love"', data.body);
-    //     }, function(err) {
-    //     console.error(err);
-    //     });
-
-
-
     spotify
         .search({ type: 'track', query: title })
         .then(function(response) {
-            console.log(response);
+
+            // console.log(response);
+            console.log(response.tracks.items[0]);
+
+            var firstResult = response.tracks.items[0];
+
+            // * Artist(s)
+            console.log('Artist: ' + firstResult.artists[0].name);
+            // * The song's name
+            console.log('Song name: ' + firstResult.name);
+            // * A preview link of the song from Spotify
+            console.log('Preview link: ' + firstResult.href);
+            // * The album that the song is from
+            console.log('Album: ' + firstResult.album.name);
+            // * If no song is provided then your program will default to "The Sign" by Ace of Base.
         })
         .catch(function(err) {
             console.log(err);
         });
-
-
-
-
-    // spotify
-    //     .request("https://api.spotify.com/v1/search?query=" + title + "&type=track&offset=0&limit=20")
-    //     .then(function(data) {
-    //         console.log(data); 
-    //     })
-    //     .catch(function(err) {
-    //         console.error('Error occurred: ' + err); 
-    //     });
-
-
-
-
-    // request("https://api.spotify.com/v1/search?query=" + title + "&type=track&offset=0&limit=20");
-       
-    // spotify.search({ type: 'track', query: title }, function(err, data) {
-    //     if (err) {
-    //         return console.log('Error occurred: ' + err);
-    //     }
-    //     console.log(JSON.parse(data)); 
-    // });
 }
+
+
 
 function getMovie(title) {
 
