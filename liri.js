@@ -52,7 +52,19 @@ function getTweets() {
     var params = {screen_name: 'StefLiri'};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         if (!error) {
-            console.log(tweets);
+            console.log(
+                '\n' + 
+                'MOST RECENT TWEETS: ' + '\n'
+            );
+            for (var i=0; i < tweets.length; i++)
+            console.log(
+                tweets[i].text + '\n' +
+                tweets[i].created_at.substring(0, 19) + '\n' +
+                '--------------------------------'
+            );
+            console.log(
+                '\n'
+            );
         }
     });
 }
