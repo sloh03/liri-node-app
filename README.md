@@ -24,7 +24,7 @@ The app will take the following commands:
 ### 1. `node liri.js my-tweets`
 * Shows the last 20 tweets and when they were created at in your terminal/bash window
 
-2. `node liri.js spotify-this-song '<song name here>'`
+### 2. `node liri.js spotify-this-song '<song name here>'`
 * Shows the following information about the song:
     * Artist
     * Name
@@ -32,7 +32,7 @@ The app will take the following commands:
     * Preview link
 * Information defaults to "The Sign" by Ace of Base if no song name is provided
 
-3. `node liri.js movie-this '<movie name here>'`
+### 3. `node liri.js movie-this '<movie name here>'`
 * Shows the following information about the movie.
     * Title
     * Year
@@ -44,12 +44,25 @@ The app will take the following commands:
     * Actors
 * Information defaults to "Mr. Nobody" if no movie name is provided
 
-4. `node liri.js do-what-it-says`
+### 4. `node liri.js do-what-it-says`
 * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
 ### Bonus Feature
 Both commands and data output are visible in a .txt file called `log.txt`.
 
+## Languages and Libraries Used
+* Node.js
+
+## Materials Sources
+* [Twitter](https://www.npmjs.com/package/twitter)
+
+* [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
+
+* [Request](https://www.npmjs.com/package/request)
+
+* [OMDB API](http://www.omdbapi.com).
+
+* [DotEnv](https://www.npmjs.com/package/dotenv)
 
 
 
