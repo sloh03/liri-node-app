@@ -2,7 +2,7 @@
 
 LIRI is a Language Interpretation and Recognition Interface, a command line node app that takes in parameters and gives you back data.
 
-To retrieve data that will power this app, you'll need to obtain keys and send requests to the following APIs (links are provided in materials sources below):
+To retrieve data that will power this app, you will need to obtain keys and send requests to the following APIs (links are provided in materials sources below):
 * Twitter
 * Spotify
 * OMDB
@@ -22,8 +22,9 @@ The app will take the following commands:
 ### What Each Command Does
 
 ####  1. `node liri.js my-tweets`
-* Shows text of 20 most recent tweets
-* Shows the date the tweets were created
+* Shows the following information about the 20 most recent tweets:
+    * Text
+    * Date created
 
 #### 2. `node liri.js spotify-this-song '<song name here>'`
 * Shows the following information about the song:
