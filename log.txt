@@ -1,0 +1,36 @@
+
+
+COMMAND: do-what-it-says > "movie-this, "Mr.Nobody""
+
+Title of the movie: Mr. Nobody
+Movie's release year: 2009
+IMDB rating: 7.9
+Rotten Tomatoes rating: 66%
+Production country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+--------------------------------
+
+COMMAND: do-what-it-says > "spotify-this-song, "I Want it That Way""
+
+Artist: Backstreet Boys
+Song name: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/6e40mgJiCid5HRAGrbpGA6
+Album: The Hits--Chapter One
+
+--------------------------------
+
+COMMAND: movie-this, "Lion king"
+
+Title of the movie: The Lion King
+Movie's release year: 1994
+IMDB rating: 8.5
+Rotten Tomatoes rating: 92%
+Production country: USA
+Language: English, Swahili, Xhosa, Zulu
+Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame, Jim Cummings
+
+--------------------------------
