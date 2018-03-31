@@ -46,7 +46,7 @@ The app will take the following commands:
     * Actors
 * Information defaults to "Mr. Nobody" if no movie name is provided
 
-### 4. `node liri.js do-what-it-says`
+#### 4. `node liri.js do-what-it-says`
 * Using the `fs` Node package, LIRI will take the text inside of `random.txt` and use it to call one of LIRI's commands
 
 ## Bonus Feature
