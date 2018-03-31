@@ -21,7 +21,7 @@ The app will take the following commands:
 
 ### What Each Command Does
 
-1. `node liri.js my-tweets`
+### 1. `node liri.js my-tweets`
 * Shows the last 20 tweets and when they were created at in your terminal/bash window
 
 2. `node liri.js spotify-this-song '<song name here>'`
