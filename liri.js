@@ -22,6 +22,7 @@ else if (action === 'spotify-this-song') {
     if (title) {
         getSong(title);
     }
+    // * Otherwise, default to "The Sign" by Ace of Base.
     else {
         getSong('The Sign Ace of Base')
     }
@@ -86,10 +87,15 @@ function getSong(title) {
         .then(function(response) {
 
             // console.log(response);
-            console.log(response.tracks.items[0]);
+            // console.log(response.tracks.items[0]);
 
             var firstResult = response.tracks.items[0];
 
+            console.log(
+                '\n' +
+                'SPOTIFY SONG:' +
+                '\n'
+            );
             // * Artist(s)
             console.log('Artist: ' + firstResult.artists[0].name);
             // * The song's name
@@ -98,7 +104,10 @@ function getSong(title) {
             console.log('Preview link: ' + firstResult.href);
             // * The album that the song is from
             console.log('Album: ' + firstResult.album.name);
-            // * If no song is provided then your program will default to "The Sign" by Ace of Base.
+            console.log(
+                '\n' + '--------------------------------' + '\n' + '\n'
+            );
+
         })
         .catch(function(err) {
             console.log(err);
@@ -117,8 +126,13 @@ function getMovie(title) {
         // If the request is successful (i.e. if the response status code is 200)
         if (!error && response.statusCode === 200) {
 
-        console.log(JSON.parse(body));
+        // console.log(JSON.parse(body));
 
+        console.log(
+            '\n' +
+            'OMDB MOVIE:' +
+            '\n'
+        )
         // * Title of the movie.
         console.log('Title of the movie: ' + JSON.parse(body).Title);
         // * Year the movie came out.
@@ -135,7 +149,63 @@ function getMovie(title) {
         console.log("Plot: " + JSON.parse(body).Plot);
         // * Actors in the movie.
         console.log("Actors: " + JSON.parse(body).Actors);
+        console.log(
+            '\n' + '--------------------------------' + '\n' + '\n'
+        );
     }
   });
+}
+
+
+
+function doWhatItSays() {
+
+    // fs is a core Node package for reading and writing files
+    var fs = require("fs");
+
+    // This block of code will read from the "random.txt" file.
+    // It's important to include the "utf8" parameter or the code will provide stream data (garbage)
+    // The code will store the contents of the reading inside the variable "data"
+    fs.readFile("random.txt", "utf8", function(error, data) {
+
+        // If the code experiences any errors it will log the error to the console.
+        if (error) {
+        return console.log(error);
+        }
+
+        // We will then print the contents of data
+        console.log(data);
+
+        // Then split it on commas (to make it more readable) into an array
+        var dataArr = data.split(",");
+
+        // We will then re-display the content as an array for later use.
+        // console.log(dataArr);
+        // console.log(dataArr[0]);
+        // console.log(dataArr[1]);
+
+        if (dataArr[0] === 'my-tweets') {
+            getTweets();
+        }
+        else if ( (dataArr[0] === 'spotify-this-song') && (dataArr[1]) ) {
+            title = dataArr[1];
+            getSong(title);
+        }
+        else if ( (dataArr[0] === 'spotify-this-song') && (!dataArr[1]) ) {
+            getSong('The Sign Ace of Base');
+        }
+        else if ( (dataArr[0] === 'movie-this') && (dataArr[1]) ) {
+            title = dataArr[1];
+            getMovie(title);
+        }
+        else if ( (dataArr[0] === 'movie-this') && (!dataArr[1]) ) {
+            getMovie('Mr.Nobody');
+        }
+
+        // action = dataArr[0];
+        // if (dataArr[1]) {
+        //     title = dataArr[1];
+        // }
+    })
 }
 
