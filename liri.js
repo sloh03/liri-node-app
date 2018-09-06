@@ -157,7 +157,8 @@ function getSong(title) {
             // Store song information
             var artist = firstResult.artists[0].name;
             var songName = firstResult.name;
-            var previewLink = firstResult.href;
+            // var previewLink = firstResult.href;
+            var previewLink = firstResult.external_urls.spotify;
             var album = firstResult.album.name;
 
             // Log song info to console

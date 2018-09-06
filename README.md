@@ -1,11 +1,11 @@
-# liri-node-app
+# LIRI Node App
 
 LIRI is a Language Interpretation and Recognition Interface, a command line node app that takes in parameters and gives you back data.
 
-To retrieve data that will power this app, you will need to obtain keys and send requests to the following APIs (links are provided in materials sources below):
-* Twitter
-* Spotify
-* OMDB
+To retrieve data that will power this app, you will need to obtain keys and send requests to the following APIs:
+* [Twitter](https://www.npmjs.com/package/twitter)
+* [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
+* [OMDB API](http://www.omdbapi.com)
 
 ## Function
 
@@ -35,7 +35,7 @@ The app will take the following commands:
 * Information defaults to "The Sign" by Ace of Base if no song name is provided
 
 #### 3. `node liri.js movie-this '<movie name here>'`
-* Shows the following information about the movie.
+* Shows the following information about the movie:
     * Title
     * Year
     * IMDB rating

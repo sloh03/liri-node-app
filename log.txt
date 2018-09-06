@@ -22,7 +22,8 @@ Album: The Hits--Chapter One
 
 --------------------------------
 
-COMMAND: movie-this, "Lion king"
+
+COMMAND: movie-this, "Lion King"
 
 Title of the movie: The Lion King
 Movie's release year: 1994
