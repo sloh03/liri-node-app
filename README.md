@@ -49,6 +49,8 @@ The app will take the following commands:
 #### 4. `node liri.js do-what-it-says`
 * Using the `fs` Node package, LIRI will take the text inside of `random.txt` and use it to call one of LIRI's commands
 
+![Alt text](images/6node-bot.jpg?raw=true "LIRI")
+
 ## Bonus Feature
 In addition to the terminal/bash window, both the commands and the data output are stored and accessible in a .txt file called `log.txt`.
 
